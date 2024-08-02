@@ -14,13 +14,13 @@ pipeline{
    }
  }           
 
-        stage('dev'){
+        stage('test'){
 
       steps  {
             sh '''
             terraform init
-            terraform plan -out=dev.tfplan
-            terraform apply dev.tfplan
+            terraform plan -out=test.tfplan
+            terraform apply test.tfplan
             '''
             }
         }
