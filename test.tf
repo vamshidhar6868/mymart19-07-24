@@ -57,7 +57,7 @@ resource "aws_security_group" "rds_sg" {
   key_name = "vamshi"
   vpc_security_group_ids = [ "sg-0c5b7284384684629" ]
   tags = {
-    Name = "mymart"
+    Name = "mymart1"
   }
    
    provisioner "remote-exec" {
