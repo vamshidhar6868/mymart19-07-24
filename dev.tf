@@ -7,7 +7,7 @@ resource "aws_instance" "name" {
   key_name = "vamzi"
   vpc_security_group_ids = [ "sg-08100b54383ec4d0a" ]
   tags = {
-    Name = "vamshi"
+    Name = "mymart"
   }
    
    provisioner "remote-exec" {
