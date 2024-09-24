@@ -22,7 +22,7 @@ resource "aws_instance" "name" {
          "git clone https://github.com/vamshidhar6868/mymart19-07-24.git",
          "cd mymart19-07-24",
          "sudo apt install openjdk-17-jdk -y",
-         "sudo apt install maven -y",
+         "sudo apt install spring -y",
          "sudo apt install gradle -y",
          "sudo apt install maven -y",
          "mvn clean package",
