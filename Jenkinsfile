@@ -1,11 +1,11 @@
-pipeline{
+pipeline {
     agent any
     environment {
         AWS_ACCESS_KEY_ID     = credentials('aws-cred')
         AWS_SECRET_ACCESS_KEY = credentials('aws-cred')
     }
     stages {
-        stage('aws'){
+        stage('aws') {
             steps  {
 
     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
@@ -14,7 +14,7 @@ pipeline{
    }
  }           
 
-        stage('dev'){
+        stage('dev') {
 
       steps  {
             sh '''
