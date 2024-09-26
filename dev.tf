@@ -1,9 +1,9 @@
 provider "aws" {
   region = "ap-south-1"
 }
-# resource "aws_security_group" "rds_sg" {
-# name = "rds_sg"
-#  Define ingress and egress rules for RDS
+resource "aws_security_group" "rds_sg" {
+  name = "rds_sg"
+  # Define ingress and egress rules for RDS
   
  # ssh for terraform remote exec
   ingress {
@@ -31,7 +31,20 @@ provider "aws" {
     to_port     = 443
     protocol    = "tcp"
   }
-}
+
+resource "aws_db_instance" "my_rds_instance" {
+  allocated_storage    = 20
+  storage_type         = "gp2"
+  engine               = "mysql"
+  engine_version       = "8.0.35"
+  instance_class       = "db.t3.micro"
+  identifier           = "my-rds-instance"
+  db_name              = "mymart123"
+  username             = "admin"
+  password             = "admin123"
+  skip_final_snapshot  = true
+  publicly_accessible  = true
+  }
 
 resource "aws_instance" "name" {
   ami = "ami-0522ab6e1ddcc7055"
